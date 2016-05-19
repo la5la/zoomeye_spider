@@ -49,7 +49,7 @@ def saveListToFile(file, list):
 	"""
 	将列表逐行写入文件
 	:param file:
-	:param str:
+	:param list:
 	:return:
 	"""
 	s = '\n'.join(list)
