@@ -12,9 +12,9 @@ ip_list = []
 
 def login():
 	"""
-	输入用户名密码进行登录
-	:return: 访问口令 access_token
-	"""
+    输入用户名密码进行登录
+    :return: 访问口令 access_token
+    """
 	user = input('[-] input username: ')
 	passwd = input('[-] input password: ')
 	data = {
@@ -36,22 +36,22 @@ def login():
 
 def saveStrToFile(file, str):
 	"""
-	将字符串写入文件
-	:param file:
-	:param str:
-	:return:
-	"""
+    将字符串写入文件
+    :param file:
+    :param str:
+    :return:
+    """
 	with open(file, 'w') as output:
 		output.write(str)
 
 
 def saveListToFile(file, list):
 	"""
-	将列表逐行写入文件
-	:param file:
-	:param list:
-	:return:
-	"""
+    将列表逐行写入文件
+    :param file:
+    :param list:
+    :return:
+    """
 	s = '\n'.join(list)
 	with open(file, 'w') as output:
 		output.write(s)
@@ -59,9 +59,9 @@ def saveListToFile(file, list):
 
 def apiTest():
 	"""
-	进行api测试
-	:return:
-	"""
+    进行api测试
+    :return:
+    """
 	page = 1
 	global access_token
 	with open('access_token.txt', 'r') as input:
@@ -72,7 +72,7 @@ def apiTest():
 	while (True):
 		try:
 			r = requests.get(url='http://api.zoomeye.org/host/search?query="dedecms"&facet=app,os&page=' + str(page),
-			                 headers=headers)
+							 headers=headers)
 			r_decoded = json.loads(r.text)
 			for x in r_decoded['matches']:
 				print(x['ip'])
